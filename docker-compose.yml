@@ -9,14 +9,14 @@ services:
   jobs:
     depends_on:
       - 'postgres'
-      - 'website'
+      - 'app'
     build: .
     volumes:
       - '.:/room_reservation'
     volumes_from:
       - box
 
-  website:
+  app:
     depends_on:
       - 'postgres'
     build: .
